@@ -171,6 +171,68 @@
             max-width: 100vw;
         }
 
+        /* New styles for the additional div */
+        .new-div-top {
+            position: relative;
+            display: grid;
+            left: 15vw;
+            width: 60vw;
+            height: 40vh;
+            margin-top: 10vh;
+            text-align: left;
+            padding-top: 5vh;
+        }
+        
+        .icl_img{
+            position: relative;
+            margin-top: 10vh;
+            min-width:20vw;
+            min-height: 40vh;
+            right: -5vw;
+        }
+
+        .new-div-bot {
+            position: relative;
+            display: grid;
+            left: 35vw;
+            width: 30vw;
+            height: 40vh;
+            margin-top: 15vh;
+            text-align: left;
+            padding-top: 5vh;
+        }
+        
+        .icr_img{
+            position: relative;
+            margin-top: 15vh;
+            min-width:20vw;
+            min-height: 40vh;
+            left: 15vw;
+        }
+
+        .footer{
+            position: relative;
+            margin-top: 30vh;
+            height: 8vh;
+            max-width: 100vw;
+            background-color: black;
+            display: flex;
+            color: white;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .address{
+            color: white;
+            margin: 2vh, 5vw;
+        }
+
+        .contact{
+            color: white;
+            margin: 2vh, 5vw;
+        }
+
     </style>
 </head>
 <body>
@@ -272,17 +334,33 @@
     <div class="most_ordered">
         <h1 class="mo_title">Our Most Ordered Items</h1>
         <div class="mo_top">
-            <div class="items_cont_left">
-
-            </div>
-            <img class="icl_img" src=""/>
+            <div class="new-div-top">
+                <h2>Zinger Faves</h2>
+                <ul>
+                    <li>Zinger Burger and Chill Fries with Coke</li>
+                    <li>Zinger Burger and Chill Fries with Coke</li>
+                    <li>Zinger Burger and Chill Fries with Coke</li>
+                    <li>Zinger Burger and Chill Fries with Coke</li>
+                </ul>
+            </div> <!-- New div with requested styles -->
+            <img class="icl_img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIgrISBw2BvBtW79rTc-6AdiWq8lq28UxnxA&s"/>
         </div>
         <div class="mo_bottom">
-            <div class="items_cont_right">
-
-            </div>
-            <img class="icr_img" src=""/>
+            <img class="icr_img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIgrISBw2BvBtW79rTc-6AdiWq8lq28UxnxA&s"/>
+            <div class="new-div-bot">
+                <h2>Italian Memories</h2>
+                <ul>
+                    <li>Crunchy Pasta with French Fries and Coke</li>
+                    <li>Zinger Burger and Chill Fries with Coke</li>
+                    <li>Zinger Burger and Chill Fries with Coke</li>
+                    <li>Zinger Burger and Chill Fries with Coke</li>
+                </ul>
+            </div> <!-- New div with requested styles -->
         </div>
+    </div>
+    <div class="footer">
+        <p class="address"><i class="address fas fa-map-marker-alt"></i> 123 Main Street, Anytown, USA</p>
+        <p class="contact"><i class="contact fas fa-phone-alt"></i> (123) 456-7890</p>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -290,3 +368,4 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
+
