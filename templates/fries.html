@@ -1,0 +1,203 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/fries.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <title>Menu | Quick Taste</title>
+</head>
+<body>
+    <div id="landing_header">
+        <a href='#'><h2 id="landing_header_left">
+            Quick Taste
+        </h2></a>
+        <div id="landing_header_right">
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/menu/burgers">Menu</a>
+            <a href="/reservations">Reservations</a>
+            <a href="/contact">Contact</a>
+            <button id="hidden_menu_button"><img id="hidden_menu" src="https://static.thenounproject.com/png/356889-200.png" /></button>
+        </div>
+    </div>
+    <div id="menu_bar">
+        <a class="menu-item" href="/menu/burgers">Burgers</a>
+        <a class="menu-item" href="/menu/pizzas">Pizzas</a>
+        <a class="menu-item" href="/menu/pastas">Pastas</a>
+        <a class="menu-item" href="/menu/fries">Fries</a>
+        <a class="menu-item" href="/menu/drinks">Drinks</a>
+    </div>
+    <div id="item_list">
+        <div id="details_container">
+            <h3>Classic French Fries: $2.99</h3>
+            <p>Crispy golden fries seasoned with salt.</p>
+        </div>
+        <div id="button_container">
+            <button id="Classic_French_Fries">Order Now</button>
+        </div>
+    </div>
+    <div id="item_list">
+        <div id="details_container">
+            <h3>Cheese Fries: $3.99</h3>
+            <p>Classic fries topped with melted cheddar cheese.</p>
+        </div>
+        <div id="button_container">
+            <button id="Cheese_Fries">Order Now</button>
+        </div>
+    </div>
+    <div id="item_list">
+        <div id="details_container">
+            <h3>Chili Cheese Fries: $4.99</h3>
+            <p>Fries topped with chili and melted cheddar cheese.</p>
+        </div>
+        <div id="button_container">
+            <button id="Chili_Cheese_Fries">Order Now</button>
+        </div>
+    </div>
+    <div id="item_list">
+        <div id="details_container">
+            <h3>Garlic Parmesan Fries: $3.99</h3>
+            <p>Fries tossed with garlic and grated Parmesan cheese.</p>
+        </div>
+        <div id="button_container">
+            <button id="Garlic_Parmesan_Fries">Order Now</button>
+        </div>
+    </div>
+    <div id="item_list">
+        <div id="details_container">
+            <h3>Sweet Potato Fries: $3.49</h3>
+            <p>Crispy sweet potato fries seasoned with salt.</p>
+        </div>
+        <div id="button_container">
+            <button id="Sweet_Potato_Fries">Order Now</button>
+        </div>
+    </div>
+    <div id="item_list">
+        <div id="details_container">
+            <h3>Truffle Fries: $4.99</h3>
+            <p>Fries tossed in truffle oil and sprinkled with Parmesan cheese.</p>
+        </div>
+        <div id="button_container">
+            <button id="Truffle_Fries">Order Now</button>
+        </div>
+    </div>
+    <div id="item_list">
+        <div id="details_container">
+            <h3>Curly Fries: $3.49</h3>
+            <p>Seasoned curly fries with a crispy texture.</p>
+        </div>
+        <div id="button_container">
+            <button id="Curly_Fries">Order Now</button>
+        </div>
+    </div>
+    <div id="item_list">
+        <div id="details_container">
+            <h3>Cajun Fries: $3.49</h3>
+            <p>Fries seasoned with spicy Cajun seasoning.</p>
+        </div>
+        <div id="button_container">
+            <button id="Cajun_Fries">Order Now</button>
+        </div>
+    </div>
+    <div id="item_list">
+        <div id="details_container">
+            <h3>Bacon Cheese Fries: $4.99</h3>
+            <p>Fries topped with melted cheese and crispy bacon bits.</p>
+        </div>
+        <div id="button_container">
+            <button id="Bacon_Cheese_Fries">Order Now</button>
+        </div>
+    </div>
+    <div id="item_list">
+        <div id="details_container">
+            <h3>Loaded Fries: $5.49</h3>
+            <p>Fries topped with cheese, bacon, sour cream, and chives.</p>
+        </div>
+        <div id="button_container">
+            <button id="Loaded_Fries">Order Now</button>
+        </div>
+    </div>
+    <div id="item_list">
+        <div id="details_container">
+            <h3>Poutine: $5.99</h3>
+            <p>Fries topped with cheese curds and smothered in gravy.</p>
+        </div>
+        <div id="button_container">
+            <button id="Poutine">Order Now</button>
+        </div>
+    </div>
+    <div id="item_list">
+        <div id="details_container">
+            <h3>Steak Fries: $3.49</h3>
+            <p>Thick-cut fries with a soft interior and crispy exterior.</p>
+        </div>
+        <div id="button_container">
+            <button id="Steak_Fries">Order Now</button>
+        </div>
+    </div>
+    <div id="item_list">
+        <div id="details_container">
+            <h3>Crinkle-Cut Fries: $3.29</h3>
+            <p>Classic crinkle-cut fries seasoned with salt.</p>
+        </div>
+        <div id="button_container">
+            <button id="Crinkle_Cut_Fries">Order Now</button>
+        </div>
+    </div>
+    <div id="item_list">
+        <div id="details_container">
+            <h3>Tater Tots: $3.49</h3>
+            <p>Bite-sized crispy potato tots.</p>
+        </div>
+        <div id="button_container">
+            <button id="Tater_Tots">Order Now</button>
+        </div>
+    </div>
+    <div id="item_list">
+        <div id="details_container">
+            <h3>Zucchini Fries: $4.49</h3>
+            <p>Battered and fried zucchini sticks.</p>
+        </div>
+        <div id="button_container">
+            <button id="Zucchini_Fries">Order Now</button>
+        </div>
+    </div>
+    <div id="footer">
+        <h2>Contact: 000-000-0000</h2>
+        <h2>Address: Shop 23-24, Ground Floor, Rose 1 Plaza, I-8 Markaz I 8 Markaz I-8, Islamabad, Islamabad Capital Territory 44790</h2>
+    </div>
+    <div id="hidden_menu_container">
+        <button id="hidden_menu_button_2"><img id="hidden_menu" src="https://cdn-icons-png.flaticon.com/512/93/93634.png" /></button>
+        <div>
+            {% if name == '' %}
+            <a href="/login">Log In</a>
+            <a href="/signup">Sign Up</a>
+            {% else %}
+            <p>{{name}}</p>
+            <a>Reservations</a>
+            <a>Your Orders</a>
+            {% endif %}
+        </div>
+    </div>
+    {% if data %}
+    <div id="cart">
+        <div id="cart_header">
+            <img src="https://static-00.iconduck.com/assets.00/cart-outline-icon-512x458-a0r4hbx8.png" />
+            <h4>Your Cart</h4>
+        </div>
+        <div id="cart_container_s">    
+            {% for burger, i in data.items %}
+                <p>{{burger}} x{{ i.1 }} - {{ i.0 }}$</p>
+            {% endfor %}
+        </div>
+        <a href="/checkout" id="checkout_btn"><button>Checkout</button></a>
+    </div>
+    {% endif %}
+    <script src="{% static 'js/fries.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <title>Signup | Quick Taste</title>
+</head>
+<body>
+    <div id="login_container">
+        <h2>Signup</h2>
+        <form id="signup_form" method="POST" action="/signup">
+            {% csrf_token %}
+            <div>
+                <input type="text" name="name" placeholder="Name" required/>
+                <input type="text" name="email" placeholder="Email" required/>
+                <input type="password" name="password" placeholder="Password" required/>
+                <input type="text" name="contact_no" placeholder="Contact Number" required/>
+                <input type="text" name="address" placeholder="Address" required/>
+                <div><input type="submit" value="Signup" /></div>
+            </div>
+        </form>
+    </div>
+    <script src="{% static 'js/signup.js' %}"></script>
+</body>
+</html>

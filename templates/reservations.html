@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/reservations.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <title>Quick Taste</title>
+</head>
+<body>
+    <div id="landing_header">
+        <a href='#'><h2 id="landing_header_left">
+            Quick Taste
+        </h2></a>
+        <div id="landing_header_right">
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/menu/burgers">Menu</a>
+            <a href="/reservations">Reservations</a>
+            <a href="/contact">Contact</a>
+            <button id="hidden_menu_button"><img id="hidden_menu" src="https://static.thenounproject.com/png/356889-200.png" /></button>
+        </div>
+    </div>
+    <div id="divider_container"><div id="divider"></div></div>
+    <div id="reservations_container">
+        <h1>Book your table.</h1>
+        <form method="POST" action="/reservations">
+            {% csrf_token %}
+            <div id="left">
+                <label for="name">Name:</label>
+                <input type="text" name="name" placeholder="Name">
+                <label for="contact">Contact Number:</label>
+                <input type="text" name="contact" placeholder="Contact Number">
+                <label for="date">Date:</label>
+                <input type="date" name="date" placeholder="Date">
+            </div>
+            <div id="right">
+                <label for="time">Time:</label>
+                <input type="time" name="time" placeholder="Time">
+
+                <label for="people">Number of People:</label>
+                <input type="text" name="people" placeholder="Number of People">
+
+                <label for="table">Desired Table Number:</label>
+                <input type="text" name="table" placeholder="Desired Table Number">
+                <input type="submit" value="Book It!">
+            </div>
+        </form>
+    </div>
+    <div id="footer">
+        <h2>Contact: 000-000-0000</h2>
+        <h2>Address: Shop 23-24, Ground Floor, Rose 1 Plaza, I-8 Markaz I 8 Markaz I-8, Islamabad, Islamabad Capital Territory 44790</h2>
+    </div>
+    <div id="hidden_menu_container">
+        <button id="hidden_menu_button_2"><img id="hidden_menu" src="https://cdn-icons-png.flaticon.com/512/93/93634.png" /></button>
+        <div>
+            {% if name == '' %}
+            <a href="/login">Log In</a>
+            <a href="/signup">Sign Up</a>
+            {% else %}
+            <p>{{name}}</p>
+            <a>Reservations</a>
+            <a>Your Orders</a>
+            {% endif %}
+        </div>
+    </div>
+    <script src="{% static 'js/reservations.js' %}"></script>
+</body>
+</html>

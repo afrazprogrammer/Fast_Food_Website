@@ -1,0 +1,203 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/burgers.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <title>Menu | Quick Taste</title>
+</head>
+<body>
+    <div id="landing_header">
+        <a href='#'><h2 id="landing_header_left">
+            Quick Taste
+        </h2></a>
+        <div id="landing_header_right">
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/menu/burgers">Menu</a>
+            <a href="/reservations">Reservations</a>
+            <a href="/contact">Contact</a>
+            <button id="hidden_menu_button"><img id="hidden_menu" src="https://static.thenounproject.com/png/356889-200.png" /></button>
+        </div>
+    </div>
+    <div id="menu_bar">
+        <a class="menu-item" href="/menu/burgers">Burgers</a>
+        <a class="menu-item" href="/menu/pizzas">Pizzas</a>
+        <a class="menu-item" href="/menu/pastas">Pastas</a>
+        <a class="menu-item" href="/menu/fries">Fries</a>
+        <a class="menu-item" href="/menu/drinks">Drinks</a>
+    </div>
+    <div id="item_list">
+        <div id="details_container">
+            <h3>Classic Cheeseburger - $6.99</h3>
+            <p>Juicy beef patty, American cheese, lettuce, tomato, pickles, onions, ketchup, and mustard.</p>
+        </div>
+        <div id="button_container">
+            <button id="Classic_Cheeseburger">Order Now</button>
+        </div>
+    </div>
+    <div id="item_list">
+        <div id="details_container">
+            <h3>Bacon Cheeseburger - $7.99</h3>
+            <p>Beef patty topped with crispy bacon, cheddar cheese, lettuce, tomato, and smoky BBQ sauce.</p>
+        </div>
+        <div id="button_container">
+            <button id="Bacon_Cheeseburger">Order Now</button>
+        </div>
+    </div>
+    <div id="item_list">
+        <div id="details_container">
+            <h3>Double Cheeseburger - $8.99</h3>
+            <p>Two beef patties, double American cheese, lettuce, tomato, pickles, onions, ketchup, and mustard.</p>
+        </div>
+        <div id="button_container">
+            <button id="Double_Cheeseburger">Order Now</button>
+        </div>
+    </div>
+    <div id="item_list">
+        <div id="details_container">
+            <h3>Mushroom Swiss Burger - $7.99</h3>
+            <p>Beef patty, sautéed mushrooms, Swiss cheese, caramelized onions, and garlic aioli.</p>
+        </div>
+        <div id="button_container">
+            <button id="Mushroom_Swiss_Burger">Order Now</button>
+        </div>
+    </div>
+    <div id="item_list">
+        <div id="details_container">
+            <h3>BBQ Bacon Burger - $8.49</h3>
+            <p>Beef patty, bacon, cheddar cheese, onion rings, and BBQ sauce.</p>
+        </div>
+        <div id="button_container">
+            <button id="BBQ_Bacon_Burger">Order Now</button>
+        </div>
+    </div>
+    <div id="item_list">
+        <div id="details_container">
+            <h3>Avocado Bacon Burger - $8.99</h3>
+            <p>Beef patty, bacon, sliced avocado, pepper jack cheese, lettuce, tomato, and chipotle mayo.</p>
+        </div>
+        <div id="button_container">
+            <button id="Avocado_Bacon_Burger">Order Now</button>
+        </div>
+    </div>
+    <div id="item_list">
+        <div id="details_container">
+            <h3>Blue Cheese Burger - $7.99</h3>
+            <p>Beef patty, blue cheese crumbles, caramelized onions, lettuce, tomato, and blue cheese dressing.</p>
+        </div>
+        <div id="button_container">
+            <button id="Blue_Cheese_Burger">Order Now</button>
+        </div>
+    </div>
+    <div id="item_list">
+        <div id="details_container">
+            <h3>Veggie Burger - $6.99</h3>
+            <p>Plant-based patty, lettuce, tomato, pickles, onions, and vegan mayo.</p>
+        </div>
+        <div id="button_container">
+            <button id="Veggie_Burger">Order Now</button>
+        </div>
+    </div>
+    <div id="item_list">
+        <div id="details_container">
+            <h3>Spicy Jalapeño Burger: $7.49</h3>
+            <p>Beef patty, jalapeños, pepper jack cheese, lettuce, tomato, and spicy mayo.</p>
+        </div>
+        <div id="button_container">
+            <button id="Spicy_Jalapeño_Burger">Order Now</button>
+        </div>
+    </div>
+    <div id="item_list">
+        <div id="details_container">
+            <h3>Turkey Burger - $7.49</h3>
+            <p>Lean turkey patty, Swiss cheese, lettuce, tomato, avocado, and cranberry mayo.</p>
+        </div>
+        <div id="button_container">
+            <button id="Turkey_Burger">Order Now</button>
+        </div>
+    </div>
+    <div id="item_list">
+        <div id="details_container">
+            <h3>Buffalo Chicken Burger - $7.99</h3>
+            <p>Breaded chicken patty, buffalo sauce, blue cheese crumbles, lettuce, and ranch dressing.</p>
+        </div>
+        <div id="button_container">
+            <button id="Buffalo_Chicken_Burger">Order Now</button>
+        </div>
+    </div>
+    <div id="item_list">
+        <div id="details_container">
+            <h3>Teriyaki Pineapple Burger - $7.49</h3>
+            <p>Beef patty, grilled pineapple, teriyaki glaze, Swiss cheese, lettuce, and mayo.</p>
+        </div>
+        <div id="button_container">
+            <button id="Teriyaki_Pineapple_Burger">Order Now</button>
+        </div>
+    </div>
+    <div id="item_list">
+        <div id="details_container">
+            <h3>Black Bean Burger - $6.99</h3>
+            <p>Black bean patty, lettuce, tomato, avocado, red onion, and spicy chipotle sauce.</p>
+        </div>
+        <div id="button_container">
+            <button id="Black_Bean_Burger">Order Now</button>
+        </div>
+    </div>
+    <div id="item_list">
+        <div id="details_container">
+            <h3>Chili Burger - $7.99</h3>
+            <p>Beef patty, chili con carne, shredded cheddar cheese, diced onions, and jalapeños.</p>
+        </div>
+        <div id="button_container">
+            <button id="Chili_Burger">Order Now</button>
+        </div>
+    </div>
+    <div id="item_list">
+        <div id="details_container">
+            <h3>Greek Lamb Burger - $9.49</h3>
+            <p>Lamb patty, feta cheese, cucumber, red onion, tomato, and tzatziki sauce.</p>
+        </div>
+        <div id="button_container">
+            <button id="Greek_Lamb_Burger">Order Now</button>
+        </div>
+    </div>
+    <div id="footer">
+        <h2>Contact: 000-000-0000</h2>
+        <h2>Address: Shop 23-24, Ground Floor, Rose 1 Plaza, I-8 Markaz I 8 Markaz I-8, Islamabad, Islamabad Capital Territory 44790</h2>
+    </div>
+    <div id="hidden_menu_container">
+        <button id="hidden_menu_button_2"><img id="hidden_menu" src="https://cdn-icons-png.flaticon.com/512/93/93634.png" /></button>
+        <div>
+            {% if name == '' %}
+            <a href="/login">Log In</a>
+            <a href="/signup">Sign Up</a>
+            {% else %}
+            <p>{{name}}</p>
+            <a>Reservations</a>
+            <a>Your Orders</a>
+            {% endif %}
+        </div>
+    </div>
+    {% if data %}
+    <div id="cart">
+        <div id="cart_header">
+            <img src="https://static-00.iconduck.com/assets.00/cart-outline-icon-512x458-a0r4hbx8.png" />
+            <h4>Your Cart</h4>
+        </div>
+        <div id="cart_container_s">    
+            {% for burger, i in data.items %}
+                <p>{{burger}} x{{ i.1 }} - {{ i.0 }}$</p>
+            {% endfor %}
+        </div>
+        <a href="/checkout" id="checkout_btn"><button>Checkout</button></a>
+    </div>
+    {% endif %}
+    <script src="{% static 'js/burgers.js' %}"></script>
+</body>
+</html>

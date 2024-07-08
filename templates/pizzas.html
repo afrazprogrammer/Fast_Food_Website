@@ -1,0 +1,203 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/pizzas.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <title>Menu | Quick Taste</title>
+</head>
+<body>
+    <div id="landing_header">
+        <a href='#'><h2 id="landing_header_left">
+            Quick Taste
+        </h2></a>
+        <div id="landing_header_right">
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/menu/burgers">Menu</a>
+            <a href="/reservations">Reservations</a>
+            <a href="/contact">Contact</a>
+            <button id="hidden_menu_button"><img id="hidden_menu" src="https://static.thenounproject.com/png/356889-200.png" /></button>
+        </div>
+    </div>
+    <div id="menu_bar">
+        <a class="menu-item" href="/menu/burgers">Burgers</a>
+        <a class="menu-item" href="/menu/pizzas">Pizzas</a>
+        <a class="menu-item" href="/menu/pastas">Pastas</a>
+        <a class="menu-item" href="/menu/fries">Fries</a>
+        <a class="menu-item" href="/menu/drinks">Drinks</a>
+    </div>
+    <div id="item_list">
+        <div id="details_container">
+            <h3>Margherita Pizza - $9.99</h3>
+            <p>Classic pizza with fresh mozzarella, basil, and tomato sauce.</p>
+        </div>
+        <div id="button_container">
+            <button id="Margherita_Pizza">Order Now</button>
+        </div>
+    </div>
+    <div id="item_list">
+        <div id="details_container">
+            <h3>Pepperoni Pizza - $10.99</h3>
+            <p>Loaded with pepperoni slices and mozzarella cheese.</p>
+        </div>
+        <div id="button_container">
+            <button id="Pepperoni_Pizza">Order Now</button>
+        </div>
+    </div>
+    <div id="item_list">
+        <div id="details_container">
+            <h3>BBQ Chicken Pizza - $12.49</h3>
+            <p>Grilled chicken, BBQ sauce, red onions, and cilantro.</p>
+        </div>
+        <div id="button_container">
+            <button id="BBQ_Chicken_Pizza">Order Now</button>
+        </div>
+    </div>
+    <div id="item_list">
+        <div id="details_container">
+            <h3>Hawaiian Pizza - $11.49</h3>
+            <p>Ham, pineapple, mozzarella cheese, and tomato sauce.</p>
+        </div>
+        <div id="button_container">
+            <button id="Hawaiian_Pizza">Order Now</button>
+        </div>
+    </div>
+    <div id="item_list">
+        <div id="details_container">
+            <h3>Veggie Supreme Pizza - $11.99</h3>
+            <p>Bell peppers, onions, mushrooms, olives, and tomatoes.</p>
+        </div>
+        <div id="button_container">
+            <button id="Veggie_Supreme_Pizza">Order Now</button>
+        </div>
+    </div>
+    <div id="item_list">
+        <div id="details_container">
+            <h3>Meat Lover's Pizza - $13.49</h3>
+            <p>Pepperoni, sausage, ham, bacon, and ground beef.</p>
+        </div>
+        <div id="button_container">
+            <button id="Meat_Lovers_Pizza">Order Now</button>
+        </div>
+    </div>
+    <div id="item_list">
+        <div id="details_container">
+            <h3>Four Cheese Pizza - $10.99</h3>
+            <p>Mozzarella, cheddar, Parmesan, and gorgonzola cheeses.</p>
+        </div>
+        <div id="button_container">
+            <button id="Four_Cheese_Pizza">Order Now</button>
+        </div>
+    </div>
+    <div id="item_list">
+        <div id="details_container">
+            <h3>Buffalo Chicken Pizza - $12.99</h3>
+            <p>Spicy buffalo chicken, mozzarella cheese, and ranch dressing drizzle.</p>
+        </div>
+        <div id="button_container">
+            <button id="Buffalo_Chicken_Pizza">Order Now</button>
+        </div>
+    </div>
+    <div id="item_list">
+        <div id="details_container">
+            <h3>Spinach and Feta Pizza - $11.49</h3>
+            <p>Fresh spinach, feta cheese, mozzarella, and garlic.</p>
+        </div>
+        <div id="button_container">
+            <button id="Spinach_and_Feta_Pizza">Order Now</button>
+        </div>
+    </div>
+    <div id="item_list">
+        <div id="details_container">
+            <h3>Mushroom and Truffle Pizza - $12.99</h3>
+            <p>Sautéed mushrooms, truffle oil, mozzarella, and Parmesan.</p>
+        </div>
+        <div id="button_container">
+            <button id="Mushroom_and_Truffle_Pizza">Order Now</button>
+        </div>
+    </div>
+    <div id="item_list">
+        <div id="details_container">
+            <h3>Italian Sausage Pizza - $11.99</h3>
+            <p>Italian sausage, bell peppers, onions, and mozzarella.</p>
+        </div>
+        <div id="button_container">
+            <button id="Italian_Sausage_Pizza">Order Now</button>
+        </div>
+    </div>
+    <div id="item_list">
+        <div id="details_container">
+            <h3>Caprese Pizza - $11.49</h3>
+            <p>Fresh tomatoes, mozzarella, basil, and a balsamic glaze.</p>
+        </div>
+        <div id="button_container">
+            <button id="Caprese_Pizza">Order Now</button>
+        </div>
+    </div>
+    <div id="item_list">
+        <div id="details_container">
+            <h3>Taco Pizza - $12.99</h3>
+            <p>Seasoned ground beef, lettuce, tomatoes, cheddar cheese, and tortilla chips.</p>
+        </div>
+        <div id="button_container">
+            <button id="Taco_Pizza">Order Now</button>
+        </div>
+    </div>
+    <div id="item_list">
+        <div id="details_container">
+            <h3>White Garlic Pizza - $10.99</h3>
+            <p>Garlic sauce, mozzarella, ricotta, and spinach.</p>
+        </div>
+        <div id="button_container">
+            <button id="White_Garlic_Pizza">Order Now</button>
+        </div>
+    </div>
+    <div id="item_list">
+        <div id="details_container">
+            <h3>Pesto Chicken Pizza - $12.49</h3>
+            <p>Grilled chicken, pesto sauce, mozzarella, and sun-dried tomatoes.</p>
+        </div>
+        <div id="button_container">
+            <button id="Pesto_Chicken_Pizza">Order Now</button>
+        </div>
+    </div>
+    <div id="footer">
+        <h2>Contact: 000-000-0000</h2>
+        <h2>Address: Shop 23-24, Ground Floor, Rose 1 Plaza, I-8 Markaz I 8 Markaz I-8, Islamabad, Islamabad Capital Territory 44790</h2>
+    </div>
+    <div id="hidden_menu_container">
+        <button id="hidden_menu_button_2"><img id="hidden_menu" src="https://cdn-icons-png.flaticon.com/512/93/93634.png" /></button>
+        <div>
+            {% if name == '' %}
+            <a href="/login">Log In</a>
+            <a href="/signup">Sign Up</a>
+            {% else %}
+            <p>{{name}}</p>
+            <a>Reservations</a>
+            <a>Your Orders</a>
+            {% endif %}
+        </div>
+    </div>
+    {% if data %}
+    <div id="cart">
+        <div id="cart_header">
+            <img src="https://static-00.iconduck.com/assets.00/cart-outline-icon-512x458-a0r4hbx8.png" />
+            <h4>Your Cart</h4>
+        </div>
+        <div id="cart_container_s">    
+            {% for burger, i in data.items %}
+                <p>{{burger}} x{{ i.1 }} - {{ i.0 }}$</p>
+            {% endfor %}
+        </div>
+        <a href="/checkout" id="checkout_btn"><button>Checkout</button></a>
+    </div>
+    {% endif %}
+    <script src="{% static 'js/pizzas.js' %}"></script>
+</body>
+</html>

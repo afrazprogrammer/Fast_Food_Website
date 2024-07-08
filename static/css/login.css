@@ -1,0 +1,74 @@
+body{
+    display: grid;
+    min-height: 100vh;
+    max-width: 100vw;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+#login_container{
+    position: relative;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    width: 50vw;
+    height: 50vh;
+    border: 4px dotted;
+    border-radius: 5vw;
+    border-color: black black green green;
+}
+
+#login_container h2{
+    position: relative;
+    font-family: "Playwrite GB S", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    justify-content: center;
+    align-items: center;
+    display: grid;
+}
+
+#login_container form div{
+    position: relative;
+    display: grid;
+    width: 30vw;
+    height: 30vh;
+}
+
+#login_container form div input{
+    position: relative;
+    display: grid;
+    margin: 3vh;
+    border-radius: 5vh;
+    border: 1px solid gray;
+    padding: 1.5vh;
+}
+
+#login_container form div div{
+    position: relative;
+    background-color: white;
+    color: white;
+    height: 5vh;
+    display: grid;
+    justify-content: center;
+}
+
+#login_container form div div input[type = "submit"]{
+    position: relative;
+    background-color: green;
+    color: white;
+    width: 10vw;
+}
+
+#login_container form div div input[type = "submit"]:hover{
+    position: relative;
+    background-color: black;
+    color: white;
+    width: 10vw;
+}

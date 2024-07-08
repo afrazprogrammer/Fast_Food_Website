@@ -1,0 +1,203 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/pastas.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <title>Menu | Quick Taste</title>
+</head>
+<body>
+    <div id="landing_header">
+        <a href='#'><h2 id="landing_header_left">
+            Quick Taste
+        </h2></a>
+        <div id="landing_header_right">
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/menu/burgers">Menu</a>
+            <a href="/reservations">Reservations</a>
+            <a href="/contact">Contact</a>
+            <button id="hidden_menu_button"><img id="hidden_menu" src="https://static.thenounproject.com/png/356889-200.png" /></button>
+        </div>
+    </div>
+    <div id="menu_bar">
+        <a class="menu-item" href="/menu/burgers">Burgers</a>
+        <a class="menu-item" href="/menu/pizzas">Pizzas</a>
+        <a class="menu-item" href="/menu/pastas">Pastas</a>
+        <a class="menu-item" href="/menu/fries">Fries</a>
+        <a class="menu-item" href="/menu/drinks">Drinks</a>
+    </div>
+    <div id="item_list">
+        <div id="details_container">
+            <h3>Spaghetti Marinara - $9.99</h3>
+            <p>Classic spaghetti served with a rich tomato marinara sauce.</p>
+        </div>
+        <div id="button_container">
+            <button id="Spaghetti_Marinara">Order Now</button>
+        </div>
+    </div>
+    <div id="item_list">
+        <div id="details_container">
+            <h3>Fettuccine Alfredo - $10.99</h3>
+            <p>Fettuccine pasta tossed in a creamy Alfredo sauce with Parmesan cheese.</p>
+        </div>
+        <div id="button_container">
+            <button id="Fettuccine_Alfredo">Order Now</button>
+        </div>
+    </div>
+    <div id="item_list">
+        <div id="details_container">
+            <h3>Penne Arrabbiata - $10.49</h3>
+            <p>Penne pasta in a spicy tomato sauce with garlic and red chili flakes.</p>
+        </div>
+        <div id="button_container">
+            <button id="Penne_Arrabbiata">Order Now</button>
+        </div>
+    </div>
+    <div id="item_list">
+        <div id="details_container">
+            <h3>Lasagna Bolognese: $12.99</h3>
+            <p>Layers of pasta with Bolognese meat sauce, ricotta, and mozzarella cheese.</p>
+        </div>
+        <div id="button_container">
+            <button id="Lasagna_Bolognese">Order Now</button>
+        </div>
+    </div>
+    <div id="item_list">
+        <div id="details_container">
+            <h3>Chicken Pesto Pasta: $11.99</h3>
+            <p>Penne pasta with grilled chicken, tossed in a fresh basil pesto sauce.</p>
+        </div>
+        <div id="button_container">
+            <button id="Chicken_Pesto_Pasta">Order Now</button>
+        </div>
+    </div>
+    <div id="item_list">
+        <div id="details_container">
+            <h3>Shrimp Scampi Linguine: $13.49</h3>
+            <p>Linguine pasta with shrimp in a garlic butter and white wine sauce.</p>
+        </div>
+        <div id="button_container">
+            <button id="Shrimp_Scampi_Linguine">Order Now</button>
+        </div>
+    </div>
+    <div id="item_list">
+        <div id="details_container">
+            <h3>Vegetable Primavera: $10.99</h3>
+            <p>Mixed vegetables and pasta in a light garlic and olive oil sauce.</p>
+        </div>
+        <div id="button_container">
+            <button id="Vegetable_Primavera">Order Now</button>
+        </div>
+    </div>
+    <div id="item_list">
+        <div id="details_container">
+            <h3>Four Cheese Ravioli: $11.99</h3>
+            <p>Ravioli stuffed with a blend of four cheeses, served with marinara sauce.</p>
+        </div>
+        <div id="button_container">
+            <button id="Four_Cheese_Ravioli">Order Now</button>
+        </div>
+    </div>
+    <div id="item_list">
+        <div id="details_container">
+            <h3>Baked Ziti: $10.99</h3>
+            <p>Ziti pasta baked with marinara sauce, ricotta, and mozzarella cheese.</p>
+        </div>
+        <div id="button_container">
+            <button id="Baked_Ziti">Order Now</button>
+        </div>
+    </div>
+    <div id="item_list">
+        <div id="details_container">
+            <h3>Carbonara: $12.49</h3>
+            <p>Spaghetti with pancetta, egg yolk, Parmesan cheese, and black pepper.</p>
+        </div>
+        <div id="button_container">
+            <button id="Carbonara">Order Now</button>
+        </div>
+    </div>
+    <div id="item_list">
+        <div id="details_container">
+            <h3>Beef Stroganoff: $12.99</h3>
+            <p>Egg noodles with tender beef strips in a creamy mushroom sauce.</p>
+        </div>
+        <div id="button_container">
+            <button id="Beef_Stroganoff">Order Now</button>
+        </div>
+    </div>
+    <div id="item_list">
+        <div id="details_container">
+            <h3>Pasta Aglio e Olio: $9.49</h3>
+            <p>Spaghetti with garlic, olive oil, red pepper flakes, and parsley.</p>
+        </div>
+        <div id="button_container">
+            <button id="Pasta_Aglio_e_Olio">Order Now</button>
+        </div>
+    </div>
+    <div id="item_list">
+        <div id="details_container">
+            <h3>Mac and Cheese: $9.99</h3>
+            <p>Elbow macaroni in a creamy cheddar cheese sauce.</p>
+        </div>
+        <div id="button_container">
+            <button id="Mac_and_Cheese">Order Now</button>
+        </div>
+    </div>
+    <div id="item_list">
+        <div id="details_container">
+            <h3>Seafood Alfredo: $14.99</h3>
+            <p>Fettuccine pasta with a mix of seafood in a creamy Alfredo sauce.</p>
+        </div>
+        <div id="button_container">
+            <button id="Seafood_Alfredo">Order Now</button>
+        </div>
+    </div>
+    <div id="item_list">
+        <div id="details_container">
+            <h3>Chicken Parmesan Pasta: $12.99</h3>
+            <p>Breaded chicken breast served over spaghetti with marinara and mozzarella.</p>
+        </div>
+        <div id="button_container">
+            <button id="Chicken_Parmesan_Pasta">Order Now</button>
+        </div>
+    </div>
+    <div id="footer">
+        <h2>Contact: 000-000-0000</h2>
+        <h2>Address: Shop 23-24, Ground Floor, Rose 1 Plaza, I-8 Markaz I 8 Markaz I-8, Islamabad, Islamabad Capital Territory 44790</h2>
+    </div>
+    <div id="hidden_menu_container">
+        <button id="hidden_menu_button_2"><img id="hidden_menu" src="https://cdn-icons-png.flaticon.com/512/93/93634.png" /></button>
+        <div>
+            {% if name == '' %}
+            <a href="/login">Log In</a>
+            <a href="/signup">Sign Up</a>
+            {% else %}
+            <p>{{name}}</p>
+            <a>Reservations</a>
+            <a>Your Orders</a>
+            {% endif %}
+        </div>
+    </div>
+    {% if data %}
+    <div id="cart">
+        <div id="cart_header">
+            <img src="https://static-00.iconduck.com/assets.00/cart-outline-icon-512x458-a0r4hbx8.png" />
+            <h4>Your Cart</h4>
+        </div>
+        <div id="cart_container_s">    
+            {% for burger, i in data.items %}
+                <p>{{burger}} x{{ i.1 }} - {{ i.0 }}$</p>
+            {% endfor %}
+        </div>
+        <a href="/checkout" id="checkout_btn"><button>Checkout</button></a>
+    </div>
+    {% endif %}
+    <script src="{% static 'js/pastas.js' %}"></script>
+</body>
+</html>
