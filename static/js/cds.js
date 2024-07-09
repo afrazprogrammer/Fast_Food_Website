@@ -56,6 +56,8 @@ document.getElementById('Coca_Cola').addEventListener('click', function() {
     })
     .then(response => response.json())
     .then(data => {
+        cart = document.getElementById('cart');
+        cart.style.display = 'grid';
         if (valueCounts['Coca Cola']) {
             let existingElement = document.getElementById("cart_container_s")
             let focus = existingElement.getElementsByTagName('p')
@@ -103,6 +105,8 @@ document.getElementById('Diet_Coke').addEventListener('click', function() {
     })
     .then(response => response.json())
     .then(data => {
+        cart = document.getElementById('cart');
+        cart.style.display = 'grid';
         if (valueCounts['Diet Coke']) {
             let existingElement = document.getElementById("cart_container_s")
             let focus = existingElement.getElementsByTagName('p')
@@ -150,6 +154,8 @@ document.getElementById('Sprite').addEventListener('click', function() {
     })
     .then(response => response.json())
     .then(data => {
+        cart = document.getElementById('cart');
+        cart.style.display = 'grid';
         if (valueCounts['Sprite']) {
             let existingElement = document.getElementById("cart_container_s")
             let focus = existingElement.getElementsByTagName('p')
@@ -197,6 +203,8 @@ document.getElementById('Fanta_Orange').addEventListener('click', function() {
     })
     .then(response => response.json())
     .then(data => {
+        cart = document.getElementById('cart');
+        cart.style.display = 'grid';
         if (valueCounts['Fanta Orange']) {
             let existingElement = document.getElementById("cart_container_s")
             let focus = existingElement.getElementsByTagName('p')
@@ -244,6 +252,8 @@ document.getElementById('Dr_Pepper').addEventListener('click', function() {
     })
     .then(response => response.json())
     .then(data => {
+        cart = document.getElementById('cart');
+        cart.style.display = 'grid';
         if (valueCounts['Dr Pepper']) {
             let existingElement = document.getElementById("cart_container_s")
             let focus = existingElement.getElementsByTagName('p')
@@ -291,6 +301,8 @@ document.getElementById('Mountain_Dew').addEventListener('click', function() {
     })
     .then(response => response.json())
     .then(data => {
+        cart = document.getElementById('cart');
+        cart.style.display = 'grid';
         if (valueCounts['Mountain Dew']) {
             let existingElement = document.getElementById("cart_container_s")
             let focus = existingElement.getElementsByTagName('p')

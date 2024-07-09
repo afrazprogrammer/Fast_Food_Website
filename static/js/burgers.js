@@ -56,6 +56,8 @@ document.getElementById('Classic_Cheeseburger').addEventListener('click', functi
     })
     .then(response => response.json())
     .then(data => {
+        cart = document.getElementById('cart');
+        cart.style.display = 'grid';
         if (valueCounts['Classic Cheeseburger']) {
             let existingElement = document.getElementById("cart_container_s")
             let focus = existingElement.getElementsByTagName('p')
@@ -81,7 +83,6 @@ document.getElementById('Classic_Cheeseburger').addEventListener('click', functi
             newElement.textContent = 'Classic Cheeseburger x' + valueCounts['Classic Cheeseburger'].toString() + ` - ${priceCounts["Classic Cheeseburger"]}$`;
             // Optionally, set attributes or classes to the new element
             //newElement.className = 'new-paragraph';
-            
             // Get the container div
             let containerDiv = document.getElementById('cart_container_s');
             // Append the new element to the container div
@@ -103,6 +104,8 @@ document.getElementById('Bacon_Cheeseburger').addEventListener('click', function
     })
     .then(response => response.json())
     .then(data => {
+        cart = document.getElementById('cart');
+        cart.style.display = 'grid';
         if (valueCounts['Bacon Cheeseburger']) {
             let existingElement = document.getElementById("cart_container_s")
             let focus = existingElement.getElementsByTagName('p')
@@ -150,6 +153,8 @@ document.getElementById('Double_Cheeseburger').addEventListener('click', functio
     })
     .then(response => response.json())
     .then(data => {
+        cart = document.getElementById('cart');
+        cart.style.display = 'grid';
         if (valueCounts['Double Cheeseburger']) {
             let existingElement = document.getElementById("cart_container_s")
             let focus = existingElement.getElementsByTagName('p')
@@ -197,6 +202,8 @@ document.getElementById('Mushroom_Swiss_Burger').addEventListener('click', funct
     })
     .then(response => response.json())
     .then(data => {
+        cart = document.getElementById('cart');
+        cart.style.display = 'grid';
         if (valueCounts['Mushroom Swiss Burger']) {
             let existingElement = document.getElementById("cart_container_s")
             let focus = existingElement.getElementsByTagName('p')
@@ -244,6 +251,8 @@ document.getElementById('BBQ_Bacon_Burger').addEventListener('click', function()
     })
     .then(response => response.json())
     .then(data => {
+        cart = document.getElementById('cart');
+        cart.style.display = 'grid';
         if (valueCounts['BBQ Bacon Burger']) {
             let existingElement = document.getElementById("cart_container_s")
             let focus = existingElement.getElementsByTagName('p')
@@ -291,6 +300,8 @@ document.getElementById('Avocado_Bacon_Burger').addEventListener('click', functi
     })
     .then(response => response.json())
     .then(data => {
+        cart = document.getElementById('cart');
+        cart.style.display = 'grid';
         if (valueCounts['Avocado Bacon Burger']) {
             let existingElement = document.getElementById("cart_container_s")
             let focus = existingElement.getElementsByTagName('p')
@@ -338,6 +349,8 @@ document.getElementById('Blue_Cheese_Burger').addEventListener('click', function
     })
     .then(response => response.json())
     .then(data => {
+        cart = document.getElementById('cart');
+        cart.style.display = 'grid';
         if (valueCounts['Blue Cheese Burger']) {
             let existingElement = document.getElementById("cart_container_s")
             let focus = existingElement.getElementsByTagName('p')
@@ -385,6 +398,8 @@ document.getElementById('Veggie_Burger').addEventListener('click', function() {
     })
     .then(response => response.json())
     .then(data => {
+        cart = document.getElementById('cart');
+        cart.style.display = 'grid';
         if (valueCounts['Veggie Burger']) {
             let existingElement = document.getElementById("cart_container_s")
             let focus = existingElement.getElementsByTagName('p')
@@ -432,6 +447,8 @@ document.getElementById('Spicy_Jalapeño_Burger').addEventListener('click', func
     })
     .then(response => response.json())
     .then(data => {
+        cart = document.getElementById('cart');
+        cart.style.display = 'grid';
         if (valueCounts['Spicy Jalapeño Burger']) {
             let existingElement = document.getElementById("cart_container_s")
             let focus = existingElement.getElementsByTagName('p')
@@ -479,6 +496,8 @@ document.getElementById('Turkey_Burger').addEventListener('click', function() {
     })
     .then(response => response.json())
     .then(data => {
+        cart = document.getElementById('cart');
+        cart.style.display = 'grid';
         if (valueCounts['Turkey Burger']) {
             let existingElement = document.getElementById("cart_container_s")
             let focus = existingElement.getElementsByTagName('p')
@@ -526,6 +545,8 @@ document.getElementById('Buffalo_Chicken_Burger').addEventListener('click', func
     })
     .then(response => response.json())
     .then(data => {
+        cart = document.getElementById('cart');
+        cart.style.display = 'grid';
         if (valueCounts['Buffalo Chicken Burger']) {
             let existingElement = document.getElementById("cart_container_s")
             let focus = existingElement.getElementsByTagName('p')
@@ -573,6 +594,8 @@ document.getElementById('Teriyaki_Pineapple_Burger').addEventListener('click', f
     })
     .then(response => response.json())
     .then(data => {
+        cart = document.getElementById('cart');
+        cart.style.display = 'grid';
         if (valueCounts['Teriyaki Pineapple Burger']) {
             let existingElement = document.getElementById("cart_container_s")
             let focus = existingElement.getElementsByTagName('p')
@@ -620,6 +643,8 @@ document.getElementById('Black_Bean_Burger').addEventListener('click', function(
     })
     .then(response => response.json())
     .then(data => {
+        cart = document.getElementById('cart');
+        cart.style.display = 'grid';
         if (valueCounts['Black Bean Burger']) {
             let existingElement = document.getElementById("cart_container_s")
             let focus = existingElement.getElementsByTagName('p')
@@ -667,6 +692,8 @@ document.getElementById('Chili_Burger').addEventListener('click', function() {
     })
     .then(response => response.json())
     .then(data => {
+        cart = document.getElementById('cart');
+        cart.style.display = 'grid';
         if (valueCounts['Chili Burger']) {
             let existingElement = document.getElementById("cart_container_s")
             let focus = existingElement.getElementsByTagName('p')
@@ -714,6 +741,8 @@ document.getElementById('Greek_Lamb_Burger').addEventListener('click', function(
     })
     .then(response => response.json())
     .then(data => {
+        cart = document.getElementById('cart');
+        cart.style.display = 'grid';
         if (valueCounts['Greek Lamb Burger']) {
             let existingElement = document.getElementById("cart_container_s")
             let focus = existingElement.getElementsByTagName('p')

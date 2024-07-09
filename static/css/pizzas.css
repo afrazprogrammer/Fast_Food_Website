@@ -263,7 +263,7 @@ body{
     position: fixed;
     top: 12vh;
     left: 0vh;
-    display: grid;
+    display: none;
     justify-content: center;
     border: 1px solid lightgray;
     height: 88vh;

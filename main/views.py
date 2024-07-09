@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, redirect
 from django.http import JsonResponse
 from main.models import User, Orders, Reservations, Inventory
 from django.views.decorators.csrf import csrf_exempt
@@ -10,9 +10,9 @@ import datetime
 
 def landing(request):
     name = request.session.get('user')
-
+    print(name)
     context = {
-        'name' : name if name else ''
+        'name' : name if name else None
     }
 
     #request.session["name"] = name
@@ -112,7 +112,7 @@ def menu_burgers(request):
             f.close()
 
     context = {}
-    if len(data) != 0:
+    if len(data) == 0:
         context = {
             'name' : name,
             'message' : 'Orders Not Available',
@@ -124,7 +124,8 @@ def menu_burgers(request):
             'message' : 'Orders Available',
             'data' : data,
         }
-
+    
+    print(context)
     return render(request, "burgers.html", context)
 
 def menu_pizzas(request):
@@ -202,7 +203,7 @@ def menu_pizzas(request):
             f.close()
 
     context = {}
-    if len(data) != 0:
+    if len(data) == 0:
         context = {
             'name' : name,
             'message' : 'Orders Not Available',
@@ -215,6 +216,7 @@ def menu_pizzas(request):
             'data' : data,
         }
 
+    print(context)
     return render(request, "pizzas.html", context)
 
 def menu_pastas(request):
@@ -292,7 +294,7 @@ def menu_pastas(request):
             f.close()
 
     context = {}
-    if len(data) != 0:
+    if len(data) == 0:
         context = {
             'name' : name,
             'message' : 'Orders Not Available',
@@ -305,6 +307,7 @@ def menu_pastas(request):
             'data' : data,
         }
 
+    print(context)
     return render(request, "pastas.html", context)
 
 def menu_fries(request):
@@ -382,7 +385,7 @@ def menu_fries(request):
             f.close()
 
     context = {}
-    if len(data) != 0:
+    if len(data) == 0:
         context = {
             'name' : name,
             'message' : 'Orders Not Available',
@@ -395,6 +398,7 @@ def menu_fries(request):
             'data' : data,
         }
 
+    print(context)
     return render(request, "fries.html", context)
 
 def menu_cds(request):
@@ -473,7 +477,7 @@ def menu_cds(request):
             f.close()
 
     context = {}
-    if len(data) != 0:
+    if len(data) == 0:
         context = {
             'name' : name,
             'message' : 'Orders Not Available',
@@ -486,6 +490,7 @@ def menu_cds(request):
             'data' : data,
         }
 
+    print(context)
     return render(request, "cds.html", context)
 
 def reservations(request):
@@ -700,4 +705,90 @@ def checkout(request):
 
 
 def bookings(request):
+    if request.method == "GET":
+        reservation_all = Reservations.objects.all()
+        context = {
+            'Booking Number' : [],
+            'Name' : [],
+            'Number' : [],
+            'Date' : [],
+            'Time' : [],
+            'Number of People' : [],
+            'Table Number' : [],
+        }
+
+        for i in reservation_all:
+            print(i.id)
+            context['Booking Number'].append(i.id)
+            print(i.name)
+            context['Name'].append(i.name)
+            print(i.number)
+            context['Number'].append(i.number)
+            print(i.date)
+            context['Date'].append(i.date)
+            print(i.time)
+            context['Time'].append(i.time)
+            print(i.number_of_people)
+            context['Number of People'].append(i.number_of_people)
+            print(i.table_number)
+            context['Table Number'].append(i.table_number)
+
+        if len(context['Booking Number']) == 0:
+            context = None
+        return render(request, 'bookings.html', context = {'data' : context})
+
     return render(request, 'bookings.html')
+
+def orders(request):
+    if request.method == "GET":
+        name = request.session.get('user')
+        if name:
+            user = User.objects.filter(name=name)
+            user = user.first()
+            orders_all = Orders.objects.filter(cust_id=user.id)
+
+            context = {
+                'Order Number' : [],
+                'Name' : [],
+                'Delivery Type' : [],
+                'Address' : [],
+                'Total Amount' : [],
+                'Date' : [],
+                'Time' : [],
+                'Instructions' : [],
+                'Order Status' : [],
+            }
+
+            for i in orders_all:
+                print(i.id)
+                context['Order Number'].append(i.id)
+                print(i.name)
+                context['Name'].append(i.name)
+                print(i.delivery)
+                context['Delivery Type'].append(i.delivery)
+                print(i.address)
+                context['Address'].append(i.address)
+                print(i.amount)
+                context['Total Amount'].append(i.amount)
+                print(i.date)
+                context['Date'].append(i.date)
+                print(i.time)
+                context['Time'].append(i.time)
+                print(i.instructions)
+                context['Instructions'].append(i.instructions)
+                print(i.order_complete)
+                context['Order Status'].append(i.order_complete)
+
+            if len(context['Order Number']) == 0:
+                context = None
+
+            print(context)
+            return render(request, 'orders.html', context = {'data' : context})
+        else:
+            return render(request, 'login.html')
+
+    return render(request, 'orders.html')
+
+def logout(request):
+    request.session.flush()
+    return redirect('/')

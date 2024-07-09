@@ -56,6 +56,8 @@ document.getElementById('Margherita_Pizza').addEventListener('click', function()
     })
     .then(response => response.json())
     .then(data => {
+        cart = document.getElementById('cart');
+        cart.style.display = 'grid';
         if (valueCounts['Margherita Pizza']) {
             let existingElement = document.getElementById("cart_container_s")
             let focus = existingElement.getElementsByTagName('p')
@@ -103,6 +105,8 @@ document.getElementById('Pepperoni_Pizza').addEventListener('click', function() 
     })
     .then(response => response.json())
     .then(data => {
+        cart = document.getElementById('cart');
+        cart.style.display = 'grid';
         if (valueCounts['Pepperoni Pizza']) {
             let existingElement = document.getElementById("cart_container_s")
             let focus = existingElement.getElementsByTagName('p')
@@ -150,6 +154,8 @@ document.getElementById('BBQ_Chicken_Pizza').addEventListener('click', function(
     })
     .then(response => response.json())
     .then(data => {
+        cart = document.getElementById('cart');
+        cart.style.display = 'grid';
         if (valueCounts['BBQ Chicken Pizza']) {
             let existingElement = document.getElementById("cart_container_s")
             let focus = existingElement.getElementsByTagName('p')
@@ -197,6 +203,8 @@ document.getElementById('Hawaiian_Pizza').addEventListener('click', function() {
     })
     .then(response => response.json())
     .then(data => {
+        cart = document.getElementById('cart');
+        cart.style.display = 'grid';
         if (valueCounts['Hawaiian Pizza']) {
             let existingElement = document.getElementById("cart_container_s")
             let focus = existingElement.getElementsByTagName('p')
@@ -244,6 +252,8 @@ document.getElementById('Veggie_Supreme_Pizza').addEventListener('click', functi
     })
     .then(response => response.json())
     .then(data => {
+        cart = document.getElementById('cart');
+        cart.style.display = 'grid';
         if (valueCounts['Veggie Supreme Pizza']) {
             let existingElement = document.getElementById("cart_container_s")
             let focus = existingElement.getElementsByTagName('p')
@@ -291,6 +301,8 @@ document.getElementById('Meat_Lovers_Pizza').addEventListener('click', function(
     })
     .then(response => response.json())
     .then(data => {
+        cart = document.getElementById('cart');
+        cart.style.display = 'grid';
         if (valueCounts['Meat Lovers Pizza']) {
             let existingElement = document.getElementById("cart_container_s")
             let focus = existingElement.getElementsByTagName('p')
@@ -338,6 +350,8 @@ document.getElementById('Four_Cheese_Pizza').addEventListener('click', function(
     })
     .then(response => response.json())
     .then(data => {
+        cart = document.getElementById('cart');
+        cart.style.display = 'grid';
         if (valueCounts['Four Cheese Pizza']) {
             let existingElement = document.getElementById("cart_container_s")
             let focus = existingElement.getElementsByTagName('p')
@@ -385,6 +399,8 @@ document.getElementById('Buffalo_Chicken_Pizza').addEventListener('click', funct
     })
     .then(response => response.json())
     .then(data => {
+        cart = document.getElementById('cart');
+        cart.style.display = 'grid';
         if (valueCounts['Buffalo Chicken Pizza']) {
             let existingElement = document.getElementById("cart_container_s")
             let focus = existingElement.getElementsByTagName('p')
@@ -432,6 +448,8 @@ document.getElementById('Spinach_and_Feta_Pizza').addEventListener('click', func
     })
     .then(response => response.json())
     .then(data => {
+        cart = document.getElementById('cart');
+        cart.style.display = 'grid';
         if (valueCounts['Spinach and Feta Pizza']) {
             let existingElement = document.getElementById("cart_container_s")
             let focus = existingElement.getElementsByTagName('p')
@@ -479,6 +497,8 @@ document.getElementById('Mushroom_and_Truffle_Pizza').addEventListener('click', 
     })
     .then(response => response.json())
     .then(data => {
+        cart = document.getElementById('cart');
+        cart.style.display = 'grid';
         if (valueCounts['Mushroom and Truffle Pizza']) {
             let existingElement = document.getElementById("cart_container_s")
             let focus = existingElement.getElementsByTagName('p')
@@ -526,6 +546,8 @@ document.getElementById('Italian_Sausage_Pizza').addEventListener('click', funct
     })
     .then(response => response.json())
     .then(data => {
+        cart = document.getElementById('cart');
+        cart.style.display = 'grid';
         if (valueCounts['Italian Sausage Pizza']) {
             let existingElement = document.getElementById("cart_container_s")
             let focus = existingElement.getElementsByTagName('p')
@@ -573,6 +595,8 @@ document.getElementById('Caprese_Pizza').addEventListener('click', function() {
     })
     .then(response => response.json())
     .then(data => {
+        cart = document.getElementById('cart');
+        cart.style.display = 'grid';
         if (valueCounts['Caprese Pizza']) {
             let existingElement = document.getElementById("cart_container_s")
             let focus = existingElement.getElementsByTagName('p')
@@ -620,6 +644,8 @@ document.getElementById('Taco_Pizza').addEventListener('click', function() {
     })
     .then(response => response.json())
     .then(data => {
+        cart = document.getElementById('cart');
+        cart.style.display = 'grid';
         if (valueCounts['Taco Pizza']) {
             let existingElement = document.getElementById("cart_container_s")
             let focus = existingElement.getElementsByTagName('p')
@@ -667,6 +693,8 @@ document.getElementById('White_Garlic_Pizza').addEventListener('click', function
     })
     .then(response => response.json())
     .then(data => {
+        cart = document.getElementById('cart');
+        cart.style.display = 'grid';
         if (valueCounts['White Garlic Pizza']) {
             let existingElement = document.getElementById("cart_container_s")
             let focus = existingElement.getElementsByTagName('p')
@@ -714,6 +742,8 @@ document.getElementById('Pesto_Chicken_Pizza').addEventListener('click', functio
     })
     .then(response => response.json())
     .then(data => {
+        cart = document.getElementById('cart');
+        cart.style.display = 'grid';
         if (valueCounts['Pesto Chicken Pizza']) {
             let existingElement = document.getElementById("cart_container_s")
             let focus = existingElement.getElementsByTagName('p')

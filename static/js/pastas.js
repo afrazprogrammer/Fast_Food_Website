@@ -56,6 +56,8 @@ document.getElementById('Spaghetti_Marinara').addEventListener('click', function
     })
     .then(response => response.json())
     .then(data => {
+        cart = document.getElementById('cart');
+        cart.style.display = 'grid';
         if (valueCounts['Spaghetti Marinara']) {
             let existingElement = document.getElementById("cart_container_s")
             let focus = existingElement.getElementsByTagName('p')
@@ -103,6 +105,8 @@ document.getElementById('Fettuccine_Alfredo').addEventListener('click', function
     })
     .then(response => response.json())
     .then(data => {
+        cart = document.getElementById('cart');
+        cart.style.display = 'grid';
         if (valueCounts['Fettuccine Alfredo']) {
             let existingElement = document.getElementById("cart_container_s")
             let focus = existingElement.getElementsByTagName('p')
@@ -150,6 +154,8 @@ document.getElementById('Penne_Arrabbiata').addEventListener('click', function()
     })
     .then(response => response.json())
     .then(data => {
+        cart = document.getElementById('cart');
+        cart.style.display = 'grid';
         if (valueCounts['Penne Arrabbiata']) {
             let existingElement = document.getElementById("cart_container_s")
             let focus = existingElement.getElementsByTagName('p')
@@ -197,6 +203,8 @@ document.getElementById('Lasagna_Bolognese').addEventListener('click', function(
     })
     .then(response => response.json())
     .then(data => {
+        cart = document.getElementById('cart');
+        cart.style.display = 'grid';
         if (valueCounts['Lasagna Bolognese']) {
             let existingElement = document.getElementById("cart_container_s")
             let focus = existingElement.getElementsByTagName('p')
@@ -244,6 +252,8 @@ document.getElementById('Chicken_Pesto_Pasta').addEventListener('click', functio
     })
     .then(response => response.json())
     .then(data => {
+        cart = document.getElementById('cart');
+        cart.style.display = 'grid';
         if (valueCounts['Chicken Pesto Pasta']) {
             let existingElement = document.getElementById("cart_container_s")
             let focus = existingElement.getElementsByTagName('p')
@@ -291,6 +301,8 @@ document.getElementById('Shrimp_Scampi_Linguine').addEventListener('click', func
     })
     .then(response => response.json())
     .then(data => {
+        cart = document.getElementById('cart');
+        cart.style.display = 'grid';
         if (valueCounts['Shrimp Scampi Linguine']) {
             let existingElement = document.getElementById("cart_container_s")
             let focus = existingElement.getElementsByTagName('p')
@@ -338,6 +350,8 @@ document.getElementById('Vegetable_Primavera').addEventListener('click', functio
     })
     .then(response => response.json())
     .then(data => {
+        cart = document.getElementById('cart');
+        cart.style.display = 'grid';
         if (valueCounts['Vegetable Primavera']) {
             let existingElement = document.getElementById("cart_container_s")
             let focus = existingElement.getElementsByTagName('p')
@@ -385,6 +399,8 @@ document.getElementById('Four_Cheese_Ravioli').addEventListener('click', functio
     })
     .then(response => response.json())
     .then(data => {
+        cart = document.getElementById('cart');
+        cart.style.display = 'grid';
         if (valueCounts['Four Cheese Ravioli']) {
             let existingElement = document.getElementById("cart_container_s")
             let focus = existingElement.getElementsByTagName('p')
@@ -432,6 +448,8 @@ document.getElementById('Baked_Ziti').addEventListener('click', function() {
     })
     .then(response => response.json())
     .then(data => {
+        cart = document.getElementById('cart');
+        cart.style.display = 'grid';
         if (valueCounts['Baked Ziti']) {
             let existingElement = document.getElementById("cart_container_s")
             let focus = existingElement.getElementsByTagName('p')
@@ -479,6 +497,8 @@ document.getElementById('Carbonara').addEventListener('click', function() {
     })
     .then(response => response.json())
     .then(data => {
+        cart = document.getElementById('cart');
+        cart.style.display = 'grid';
         if (valueCounts['Carbonara']) {
             let existingElement = document.getElementById("cart_container_s")
             let focus = existingElement.getElementsByTagName('p')
@@ -526,6 +546,8 @@ document.getElementById('Beef_Stroganoff').addEventListener('click', function() 
     })
     .then(response => response.json())
     .then(data => {
+        cart = document.getElementById('cart');
+        cart.style.display = 'grid';
         if (valueCounts['Beef Stroganoff']) {
             let existingElement = document.getElementById("cart_container_s")
             let focus = existingElement.getElementsByTagName('p')
@@ -573,6 +595,8 @@ document.getElementById('Pasta_Aglio_e_Olio').addEventListener('click', function
     })
     .then(response => response.json())
     .then(data => {
+        cart = document.getElementById('cart');
+        cart.style.display = 'grid';
         if (valueCounts['Pasta Aglio e Olio']) {
             let existingElement = document.getElementById("cart_container_s")
             let focus = existingElement.getElementsByTagName('p')
@@ -620,6 +644,8 @@ document.getElementById('Mac_and_Cheese').addEventListener('click', function() {
     })
     .then(response => response.json())
     .then(data => {
+        cart = document.getElementById('cart');
+        cart.style.display = 'grid';
         if (valueCounts['Mac and Cheese']) {
             let existingElement = document.getElementById("cart_container_s")
             let focus = existingElement.getElementsByTagName('p')
@@ -667,6 +693,8 @@ document.getElementById('Seafood_Alfredo').addEventListener('click', function() 
     })
     .then(response => response.json())
     .then(data => {
+        cart = document.getElementById('cart');
+        cart.style.display = 'grid';
         if (valueCounts['Seafood Alfredo']) {
             let existingElement = document.getElementById("cart_container_s")
             let focus = existingElement.getElementsByTagName('p')
@@ -714,6 +742,8 @@ document.getElementById('Chicken_Parmesan_Pasta').addEventListener('click', func
     })
     .then(response => response.json())
     .then(data => {
+        cart = document.getElementById('cart');
+        cart.style.display = 'grid';
         if (valueCounts['Chicken Parmesan Pasta']) {
             let existingElement = document.getElementById("cart_container_s")
             let focus = existingElement.getElementsByTagName('p')

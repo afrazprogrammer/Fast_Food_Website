@@ -56,6 +56,8 @@ document.getElementById('Classic_French_Fries').addEventListener('click', functi
     })
     .then(response => response.json())
     .then(data => {
+        cart = document.getElementById('cart');
+        cart.style.display = 'grid';
         if (valueCounts['Classic French Fries']) {
             let existingElement = document.getElementById("cart_container_s")
             let focus = existingElement.getElementsByTagName('p')
@@ -103,6 +105,8 @@ document.getElementById('Cheese_Fries').addEventListener('click', function() {
     })
     .then(response => response.json())
     .then(data => {
+        cart = document.getElementById('cart');
+        cart.style.display = 'grid';
         if (valueCounts['Cheese Fries']) {
             let existingElement = document.getElementById("cart_container_s")
             let focus = existingElement.getElementsByTagName('p')
@@ -150,6 +154,8 @@ document.getElementById('Chili_Cheese_Fries').addEventListener('click', function
     })
     .then(response => response.json())
     .then(data => {
+        cart = document.getElementById('cart');
+        cart.style.display = 'grid';
         if (valueCounts['Chili Cheese Fries']) {
             let existingElement = document.getElementById("cart_container_s")
             let focus = existingElement.getElementsByTagName('p')
@@ -197,6 +203,8 @@ document.getElementById('Garlic_Parmesan_Fries').addEventListener('click', funct
     })
     .then(response => response.json())
     .then(data => {
+        cart = document.getElementById('cart');
+        cart.style.display = 'grid';
         if (valueCounts['Garlic Parmesan Fries']) {
             let existingElement = document.getElementById("cart_container_s")
             let focus = existingElement.getElementsByTagName('p')
@@ -244,6 +252,8 @@ document.getElementById('Sweet_Potato_Fries').addEventListener('click', function
     })
     .then(response => response.json())
     .then(data => {
+        cart = document.getElementById('cart');
+        cart.style.display = 'grid';
         if (valueCounts['Sweet Potato Fries']) {
             let existingElement = document.getElementById("cart_container_s")
             let focus = existingElement.getElementsByTagName('p')
@@ -291,6 +301,8 @@ document.getElementById('Truffle_Fries').addEventListener('click', function() {
     })
     .then(response => response.json())
     .then(data => {
+        cart = document.getElementById('cart');
+        cart.style.display = 'grid';
         if (valueCounts['Truffle Fries']) {
             let existingElement = document.getElementById("cart_container_s")
             let focus = existingElement.getElementsByTagName('p')
@@ -338,6 +350,8 @@ document.getElementById('Curly_Fries').addEventListener('click', function() {
     })
     .then(response => response.json())
     .then(data => {
+        cart = document.getElementById('cart');
+        cart.style.display = 'grid';
         if (valueCounts['Curly Fries']) {
             let existingElement = document.getElementById("cart_container_s")
             let focus = existingElement.getElementsByTagName('p')
@@ -385,6 +399,8 @@ document.getElementById('Cajun_Fries').addEventListener('click', function() {
     })
     .then(response => response.json())
     .then(data => {
+        cart = document.getElementById('cart');
+        cart.style.display = 'grid';
         if (valueCounts['Cajun Fries']) {
             let existingElement = document.getElementById("cart_container_s")
             let focus = existingElement.getElementsByTagName('p')
@@ -432,6 +448,8 @@ document.getElementById('Bacon_Cheese_Fries').addEventListener('click', function
     })
     .then(response => response.json())
     .then(data => {
+        cart = document.getElementById('cart');
+        cart.style.display = 'grid';
         if (valueCounts['Bacon Cheese Fries']) {
             let existingElement = document.getElementById("cart_container_s")
             let focus = existingElement.getElementsByTagName('p')
@@ -479,6 +497,8 @@ document.getElementById('Loaded_Fries').addEventListener('click', function() {
     })
     .then(response => response.json())
     .then(data => {
+        cart = document.getElementById('cart');
+        cart.style.display = 'grid';
         if (valueCounts['Loaded Fries']) {
             let existingElement = document.getElementById("cart_container_s")
             let focus = existingElement.getElementsByTagName('p')
@@ -526,6 +546,8 @@ document.getElementById('Poutine').addEventListener('click', function() {
     })
     .then(response => response.json())
     .then(data => {
+        cart = document.getElementById('cart');
+        cart.style.display = 'grid';
         if (valueCounts['Poutine']) {
             let existingElement = document.getElementById("cart_container_s")
             let focus = existingElement.getElementsByTagName('p')
@@ -573,6 +595,8 @@ document.getElementById('Steak_Fries').addEventListener('click', function() {
     })
     .then(response => response.json())
     .then(data => {
+        cart = document.getElementById('cart');
+        cart.style.display = 'grid';
         if (valueCounts['Steak Fries']) {
             let existingElement = document.getElementById("cart_container_s")
             let focus = existingElement.getElementsByTagName('p')
@@ -620,6 +644,8 @@ document.getElementById('Crinkle_Cut_Fries').addEventListener('click', function(
     })
     .then(response => response.json())
     .then(data => {
+        cart = document.getElementById('cart');
+        cart.style.display = 'grid';
         if (valueCounts['Crinkle Cut Fries']) {
             let existingElement = document.getElementById("cart_container_s")
             let focus = existingElement.getElementsByTagName('p')
@@ -667,6 +693,8 @@ document.getElementById('Tater_Tots').addEventListener('click', function() {
     })
     .then(response => response.json())
     .then(data => {
+        cart = document.getElementById('cart');
+        cart.style.display = 'grid';
         if (valueCounts['Tater Tots']) {
             let existingElement = document.getElementById("cart_container_s")
             let focus = existingElement.getElementsByTagName('p')
@@ -714,6 +742,8 @@ document.getElementById('Zucchini_Fries').addEventListener('click', function() {
     })
     .then(response => response.json())
     .then(data => {
+        cart = document.getElementById('cart');
+        cart.style.display = 'grid';
         if (valueCounts['Zucchini Fries']) {
             let existingElement = document.getElementById("cart_container_s")
             let focus = existingElement.getElementsByTagName('p')

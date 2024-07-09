@@ -58,13 +58,14 @@
     <div id="hidden_menu_container">
         <button id="hidden_menu_button_2"><img id="hidden_menu" src="https://cdn-icons-png.flaticon.com/512/93/93634.png" /></button>
         <div>
-            {% if name == '' %}
+            {% if not name %}
             <a href="/login">Log In</a>
             <a href="/signup">Sign Up</a>
             {% else %}
             <p>{{name}}</p>
-            <a>Reservations</a>
-            <a>Your Orders</a>
+            <a href="/bookings">Reservations</a>
+            <a href="/orders">Your Orders</a>
+            <a href="/logout">Logout</a>
             {% endif %}
         </div>
     </div>
