@@ -577,7 +577,7 @@ def checkout(request):
         file_path = f'{user.first().id}.txt'
 
     if request.method == "POST":
-        if "sender" in request.POST.keys():
+        try:
             print("YEAH!")
             data = json.loads(request.body)
             deal_number = data['deal']
@@ -633,7 +633,7 @@ def checkout(request):
 
             print("Done")
             return redirect('/checkout')
-        else:
+        except:
             cust_id = user.first().id
             address = request.POST.get('address')
             delivery = request.POST.get('delivery')
@@ -704,7 +704,7 @@ def checkout(request):
             except Exception as e:
                 print(f"An error occurred: {e}")
 
-            return redirect('/landing')
+            return redirect('/')
 
 
     data = {}
