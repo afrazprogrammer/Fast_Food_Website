@@ -54,13 +54,18 @@
     <div id="hidden_menu_container">
         <button id="hidden_menu_button_2"><img id="hidden_menu" src="https://cdn-icons-png.flaticon.com/512/93/93634.png" /></button>
         <div>
-            {% if not name %}
+            {% if not request.session.user %}
             <a href="/login">Log In</a>
             <a href="/signup">Sign Up</a>
             {% else %}
-            <p>{{name}}</p>
+            <p>{{request.session.user}}</p>
             <a href="/bookings">Reservations</a>
+            {% if request.session.type == "c" %}
             <a href="/orders">Your Orders</a>
+            {% else %}
+            <a href="/orders">Orders</a>
+            <a href="/inventory">Inventory</a>
+            {% endif %}
             <a href="/logout">Logout</a>
             {% endif %}
         </div>

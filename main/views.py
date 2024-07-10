@@ -1,5 +1,5 @@
-from django.shortcuts import render, HttpResponse, redirect
-from django.http import JsonResponse
+from django.shortcuts import render, HttpResponse, redirect, get_object_or_404
+from django.http import JsonResponse, Http404
 from main.models import User, Orders, Reservations, Inventory
 from django.views.decorators.csrf import csrf_exempt
 import json
@@ -540,13 +540,15 @@ def login(request):
         if user.exists():
             user = user.first()
             print(user.name)
+            print(user.usertype)
             context = {
                 'name' : user.name,
                 'login' : 'success',
             }
             
             request.session["user"] = user.name
-            return render(request, "landing.html", context)
+            request.session["type"] = user.usertype
+            return redirect('/')
         else:
             return render(request, "login.html")
         
@@ -575,77 +577,134 @@ def checkout(request):
         file_path = f'{user.first().id}.txt'
 
     if request.method == "POST":
-        cust_id = user.first().id
-        address = request.POST.get('address')
-        delivery = request.POST.get('delivery')
-        instructions = request.POST.get('instructions')
-        burgers = []
-        pizzas = []
-        pastas = []
-        fries = []
-        drinks = []
-        total = []
-        now = datetime.datetime.now()
-        date = f'{now.year}/{now.month}/{now.day}'
-        time = f'{now.hour}:{now.minute}:{now.second}'
-        order_complete = False
+        if "sender" in request.POST.keys():
+            print("YEAH!")
+            data = json.loads(request.body)
+            deal_number = data['deal']
+            burger = ''
+            
+            deal_number_1 = ["Classic Cheeseburger", "Classic French Fries", "Coca Cola"]
+            deal_number_2 = ["Pepperoni Pizza", "Cheese Fries", "Diet Cola"]
+            deal_number_3 = ["Spaghetti Marinara", "Sweet Potato Fries", "Fanta Orange"]
+            
+            type_1 = ["Burger", "Fries", "Drink"]
+            type_2 = ["Pizza", "Fries", "Drink"]
+            type_3 = ["Pasta", "Fries", "Drink"]
 
-        with open(file_path, 'r') as f:
-            lines = f.readlines()
-            sep_lines = []
-            for line in lines:
-                sep_lines.append(line.strip())
-                #print(line.strip())
+            if deal_number == '1':
+                for i in range(len(deal_number_1)):
+                    burger = deal_number_1[i]
+                    price = 9.99 if i == 0 else 0.00
+                    if not os.path.exists(file_path):
+                        print(f"{file_path} does not exist. Creating a new file...")
+                        with open(file_path, 'w') as f:
+                            f.write(f'{burger} - {price} - {type_1[i]}\n')
 
-            sum_ = 0
-            for i in sep_lines:
-                burg_price = i.split("-")
+                            f.close()
+                    else:
+                        with open(file_path, 'a') as f:
+                            f.write(f'{burger} - {price} - {type_1[i]}\n')
+            elif deal_number == '2':            
+                for i in range(len(deal_number_2)):
+                    burger = deal_number_2[i]
+                    price = 19.99 if i == 0 else 0.00
+                    if not os.path.exists(file_path):
+                        print(f"{file_path} does not exist. Creating a new file...")
+                        with open(file_path, 'w') as f:
+                            f.write(f'{burger} - {price} - {type_2[i]}\n')
 
-                if burg_price[2].strip() == "Burger":
-                    print("Burger")
-                    burgers.append(f'{burg_price[0].strip()} - {burg_price[1].strip()}')
-                    sum_ += float(burg_price[1].strip())
-                elif burg_price[2].strip() == "Pizza":
-                    print("Pizza")
-                    pizzas.append(f'{burg_price[0].strip()} - {burg_price[1].strip()}')
-                    sum_ += float(burg_price[1].strip())
-                elif burg_price[2].strip() == "Pasta":
-                    print("Pasta")
-                    pastas.append(f'{burg_price[0].strip()} - {burg_price[1].strip()}')
-                    sum_ += float(burg_price[1].strip())
-                elif burg_price[2].strip() == "Fries":
-                    print("Fries")
-                    fries.append(f'{burg_price[0].strip()} - {burg_price[1].strip()}')
-                    sum_ += float(burg_price[1].strip())
-                elif burg_price[2].strip() == "Drink":
-                    print("Drink")
-                    drinks.append(f'{burg_price[0].strip()} - {burg_price[1].strip()}')
-                    sum_ += float(burg_price[1].strip())
+                            f.close()
+                    else:
+                        with open(file_path, 'a') as f:
+                            f.write(f'{burger} - {price} - {type_2[i]}\n')
+            else:
+                for i in range(len(deal_number_3)):
+                    burger = deal_number_3[i]
+                    price = 12.99 if i == 0 else 0.00
+                    if not os.path.exists(file_path):
+                        print(f"{file_path} does not exist. Creating a new file...")
+                        with open(file_path, 'w') as f:
+                            f.write(f'{burger} - {price} - {type_3[i]}\n')
 
-            items = {
-                'burgers': burgers,
-                'pizzas' : pizzas,
-                'pastas' : pastas,
-                'fries' : fries,
-                'drinks' : drinks,
-            }
+                            f.close()
+                    else:
+                        with open(file_path, 'a') as f:
+                            f.write(f'{burger} - {price} - {type_3[i]}\n')
 
-        print(name, cust_id, address, delivery, instructions, items, sum_, date, time, instructions, order_complete)
+            print("Done")
+            return redirect('/checkout')
+        else:
+            cust_id = user.first().id
+            address = request.POST.get('address')
+            delivery = request.POST.get('delivery')
+            instructions = request.POST.get('instructions')
+            burgers = []
+            pizzas = []
+            pastas = []
+            fries = []
+            drinks = []
+            total = []
+            now = datetime.datetime.now()
+            date = f'{now.year}/{now.month}/{now.day}'
+            time = f'{now.hour}:{now.minute}:{now.second}'
+            order_complete = False
 
-        order = Orders(cust_id = cust_id, name=name, items=items, delivery=delivery, address=address, amount=sum_, date=date, time=time, instructions=instructions, order_complete=order_complete)
-        order.save()
+            with open(file_path, 'r') as f:
+                lines = f.readlines()
+                sep_lines = []
+                for line in lines:
+                    sep_lines.append(line.strip())
+                    #print(line.strip())
 
-        try:
-            os.remove(file_path)
-            print(f"File {file_path} has been deleted successfully.")
-        except FileNotFoundError:
-            print(f"File {file_path} does not exist.")
-        except PermissionError:
-            print(f"Permission denied: unable to delete {file_path}.")
-        except Exception as e:
-            print(f"An error occurred: {e}")
+                sum_ = 0
+                for i in sep_lines:
+                    burg_price = i.split("-")
 
-        return render(request, 'landing.html', context={"message" : "Order is Confirmed"})
+                    if burg_price[2].strip() == "Burger":
+                        print("Burger")
+                        burgers.append(f'{burg_price[0].strip()} - {burg_price[1].strip()}')
+                        sum_ += float(burg_price[1].strip())
+                    elif burg_price[2].strip() == "Pizza":
+                        print("Pizza")
+                        pizzas.append(f'{burg_price[0].strip()} - {burg_price[1].strip()}')
+                        sum_ += float(burg_price[1].strip())
+                    elif burg_price[2].strip() == "Pasta":
+                        print("Pasta")
+                        pastas.append(f'{burg_price[0].strip()} - {burg_price[1].strip()}')
+                        sum_ += float(burg_price[1].strip())
+                    elif burg_price[2].strip() == "Fries":
+                        print("Fries")
+                        fries.append(f'{burg_price[0].strip()} - {burg_price[1].strip()}')
+                        sum_ += float(burg_price[1].strip())
+                    elif burg_price[2].strip() == "Drink":
+                        print("Drink")
+                        drinks.append(f'{burg_price[0].strip()} - {burg_price[1].strip()}')
+                        sum_ += float(burg_price[1].strip())
+
+                items = {
+                    'burgers': burgers,
+                    'pizzas' : pizzas,
+                    'pastas' : pastas,
+                    'fries' : fries,
+                    'drinks' : drinks,
+                }
+
+            print(name, cust_id, address, delivery, instructions, items, sum_, date, time, instructions, order_complete)
+
+            order = Orders(cust_id = cust_id, name=name, items=items, delivery=delivery, address=address, amount=sum_, date=date, time=time, instructions=instructions, order_complete=order_complete)
+            order.save()
+
+            try:
+                os.remove(file_path)
+                print(f"File {file_path} has been deleted successfully.")
+            except FileNotFoundError:
+                print(f"File {file_path} does not exist.")
+            except PermissionError:
+                print(f"Permission denied: unable to delete {file_path}.")
+            except Exception as e:
+                print(f"An error occurred: {e}")
+
+            return redirect('/landing')
 
 
     data = {}
@@ -670,6 +729,13 @@ def checkout(request):
 
             for i in sep_lines:
                 burg_price = i.split("-")
+                print(burg_price[0].strip())
+                try:
+                    inventory = order = get_object_or_404(Inventory, name=burg_price[0].strip())
+                    inventory.amount = inventory.amount - 1
+                    inventory.save()
+                except Http404:
+                    print("Order not found, 404 raised")
 
                 if burg_price[0].strip() not in data.keys():
                     data[burg_price[0].strip()] = [float(burg_price[1].strip()), 1]
@@ -740,54 +806,90 @@ def bookings(request):
     return render(request, 'bookings.html')
 
 def orders(request):
+    if request.method == "POST":
+        try:
+            data = json.loads(request.body)
+            order_id = data['order_id']
+            order = get_object_or_404(Orders, id=order_id)
+            order.order_complete = True  # Update order status
+            order.save()
+            print("Done")
+            return JsonResponse({'status': 'success'})
+        except Exception as e:
+            return JsonResponse({'status': 'error', 'message': str(e)})
+
     if request.method == "GET":
         name = request.session.get('user')
+        type = request.session.get('type')
         if name:
-            user = User.objects.filter(name=name)
-            user = user.first()
-            orders_all = Orders.objects.filter(cust_id=user.id)
+            orders_all = None
+            if type == 'c':
+                user = User.objects.filter(name=name)
+                user = user.first()
+                orders_all = Orders.objects.filter(cust_id=user.id)
+            else:
+                orders_all = Orders.objects.filter(order_complete = False)
 
-            context = {
-                'Order Number' : [],
-                'Name' : [],
-                'Delivery Type' : [],
-                'Address' : [],
-                'Total Amount' : [],
-                'Date' : [],
-                'Time' : [],
-                'Instructions' : [],
-                'Order Status' : [],
-            }
+            context = {}
+
+            data = []
 
             for i in orders_all:
                 print(i.id)
-                context['Order Number'].append(i.id)
+                context['Order Number'] = i.id
                 print(i.name)
-                context['Name'].append(i.name)
+                context['Name'] = i.name
                 print(i.delivery)
-                context['Delivery Type'].append(i.delivery)
+                context['Items'] = i.items
+                print(i.items)
+                context['Delivery Type'] = i.delivery
                 print(i.address)
-                context['Address'].append(i.address)
+                context['Address'] = i.address
                 print(i.amount)
-                context['Total Amount'].append(i.amount)
+                context['Total Amount'] = i.amount
                 print(i.date)
-                context['Date'].append(i.date)
+                context['Date'] = i.date
                 print(i.time)
-                context['Time'].append(i.time)
+                context['Time'] = i.time
                 print(i.instructions)
-                context['Instructions'].append(i.instructions)
+                context['Instructions'] = i.instructions
                 print(i.order_complete)
-                context['Order Status'].append(i.order_complete)
+                context['Order Status'] = i.order_complete
+                data.append(context)
 
-            if len(context['Order Number']) == 0:
-                context = None
+            if len(data) == 0:
+                data = None
 
-            print(context)
-            return render(request, 'orders.html', context = {'data' : context})
+            print(data)
+            return render(request, 'orders.html', context = {'data' : data})
         else:
             return render(request, 'login.html')
 
     return render(request, 'orders.html')
+
+
+def inventory(request):
+    if request.method == "GET":
+        inventory_list = Inventory.objects.all()
+        len(inventory_list)
+
+        data = []
+
+        for i in inventory_list:
+            context = []
+            context.append(i.id)
+            context.append(i.name)
+            context.append(i.amount)
+            print(context)
+            data.append(context)
+
+        if len(data) == 0:
+            data = None
+
+        print(data)
+        return render(request, 'inventory.html', context = {'data' : data})
+
+    return render(request, "inventory.html")
 
 def logout(request):
     request.session.flush()

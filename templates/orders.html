@@ -29,20 +29,22 @@
     <div id="orders_container">
         <h3>Your Orders</h3>
         <div id="detail_container">
-            <table>
-                {% for item, detail in data.items %}
-                    <table>
-                        <tr>
-                            <th>{{item}}</th>
-                        </tr>
-                        <tr>
-                            {% for i in detail %}
-                            <td>{{i}}</td>
-                            {% endfor %}
-                        </tr>
-                    </table>
-                {% endfor %}
-            </table>
+            {% for i in data %}
+            <div data-order-id="{{ i.id }}">
+            {% for j, k in i.items %}
+            <h4 class="order">{{ j }}
+                {% if j == 'Items' %}
+                <pre>:    {% for l, m in k.items %}{% for n in m %}{{ n }}, {% endfor %}{% endfor %}</pre>
+                {% else %}
+                <pre>:    {{ k }}</pre>
+                {% endif %}
+            </h4>
+            {% endfor %}
+            {% if request.session.type == "e" %}
+            <button class="order-complete-btn">Order Complete</button>
+            {% endif %}
+            </div>
+            {% endfor %}
         </div>
     </div>
     <div id="footer">
@@ -52,17 +54,55 @@
     <div id="hidden_menu_container">
         <button id="hidden_menu_button_2"><img id="hidden_menu" src="https://cdn-icons-png.flaticon.com/512/93/93634.png" /></button>
         <div>
-            {% if not  name %}
+            {% if not request.session.user %}
             <a href="/login">Log In</a>
             <a href="/signup">Sign Up</a>
             {% else %}
-            <p>{{name}}</p>
+            <p>{{request.session.user}}</p>
             <a href="/bookings">Reservations</a>
+            {% if request.session.type == "c" %}
             <a href="/orders">Your Orders</a>
+            {% else %}
+            <a href="/orders">Orders</a>
+            <a href="/inventory">Inventory</a>
+            {% endif %}
             <a href="/logout">Logout</a>
             {% endif %}
         </div>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.order-complete-btn').forEach(function(button) {
+                button.addEventListener('click', function() {
+                    var orderDiv = button.parentElement;
+                    var orderh4 = orderDiv.querySelector('.order');
+                    var orderId = orderh4.textContent;
+                    orderId = orderId.replace(/\s+/g, '');
+                    console.log(orderId)
+                    orderId=orderId[orderId.length - 1]
+                    console.log(orderId)
+                    fetch('/orders', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-CSRFToken': '{{ csrf_token }}'  // Ensure CSRF token is included
+                        },
+                        body: JSON.stringify({ order_id: orderId })
+                    })
+                    .then(response => {
+                        if (response.ok) {
+                            orderDiv.remove();  // Remove order from DOM
+                        } else {
+                            console.error('Failed to complete order');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                    });
+                });
+            });
+        });
+    </script>
     <script src="{% static 'js/orders.js' %}"></script>
 </body>
 </html>

@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'css/reservations.css' %}">
+    <link rel="stylesheet" href="{% static 'css/inventory.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
-    <title>Quick Taste</title>
+    <title>Inventory | Quick Taste</title>
 </head>
 <body>
     <div id="landing_header">
@@ -26,30 +26,25 @@
         </div>
     </div>
     <div id="divider_container"><div id="divider"></div></div>
-    <div id="reservations_container">
-        <h1>Book your table.</h1>
-        <form method="POST" action="/reservations">
-            {% csrf_token %}
-            <div id="left">
-                <label for="name">Name:</label>
-                <input type="text" name="name" placeholder="Name">
-                <label for="contact">Contact Number:</label>
-                <input type="text" name="contact" placeholder="Contact Number">
-                <label for="date">Date:</label>
-                <input type="date" name="date" placeholder="Date">
-            </div>
-            <div id="right">
-                <label for="time">Time:</label>
-                <input type="time" name="time" placeholder="Time">
-
-                <label for="people">Number of People:</label>
-                <input type="text" name="people" placeholder="Number of People">
-
-                <label for="table">Desired Table Number:</label>
-                <input type="text" name="table" placeholder="Desired Table Number">
-                <input type="submit" value="Book It!">
-            </div>
-        </form>
+    <div id="reservations">
+        <h2>Inventory List</h2>
+        <div id="reservations_cont">
+        <table>
+            <tr>
+                <th>Sr. No</th>
+                <th>Name</th>
+                <th>Amount Left</th>
+            </tr>
+        {% for i in data %}
+            <tr id="data">
+                {% for j in i %}
+                <td>{{j}}</td>
+                {% endfor %}
+            </tr>
+        
+        {% endfor %}
+        </table>
+        </div>
     </div>
     <div id="footer">
         <h2>Contact: 000-000-0000</h2>
@@ -74,6 +69,6 @@
             {% endif %}
         </div>
     </div>
-    <script src="{% static 'js/reservations.js' %}"></script>
+    <script src="{% static 'js/inventory.js' %}"></script>
 </body>
 </html>
